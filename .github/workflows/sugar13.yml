@@ -50,7 +50,8 @@ jobs:
             uses: docker/metadata-action@v4
             with:
                 images: ${{ matrix.image }}
-                prefix: ${{ matrix.prefix }}
+                flavor: |
+                    prefix=${{ matrix.prefix }}
 
           - name: Build and push
             uses: docker/build-push-action@v4
