@@ -29,10 +29,10 @@ jobs:
                 include:
                 - dockerfile: ../../images/php/82/apache/Dockerfile
                   image: sugarcrmdevelopers/sugardockerized
-                  prefix: php8.2-apache
+                  prefix: php8.2-apache-
                 - dockerfile: ../../images/php/82/cron/Dockerfile
                   image: sugarcrmdevelopers/sugardockerized
-                  prefix: php8.2-cron
+                  prefix: php8.2-cron-
         runs-on: ubuntu-latest
         steps:
           - name: Checkout repository
@@ -51,6 +51,7 @@ jobs:
             with:
                 images: ${{ matrix.image }}
                 flavor: |
+                    latest=false
                     prefix=${{ matrix.prefix }}
 
           - name: Build and push
