@@ -39,8 +39,6 @@ jobs:
             uses: actions/checkout@v3
           - name: Set up QEMU
             uses: docker/setup-qemu-action@v2
-            with:
-                platforms: 'linux/amd64,linux/amd64/v2,linux/amd64/v3,linux/amd64/v4,linux/386'
           - name: Set up Docker Buildx
             uses: docker/setup-buildx-action@v2
           - name: Login to DockerHub
@@ -62,5 +60,6 @@ jobs:
             with:
                 context: ${{ matrix.dockercontext }}
                 push: true
+                platforms: 'linux/amd64,linux/amd64/v2,linux/amd64/v3,linux/amd64/v4,linux/386'
                 tags: ${{ steps.meta.outputs.tags }}
                 labels: ${{ steps.meta.outputs.labels }}
