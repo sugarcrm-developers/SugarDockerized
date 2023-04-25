@@ -27,10 +27,10 @@ jobs:
             fail-fast: false
             matrix:
                 include:
-                - dockerfile: ../../images/php/82/apache/Dockerfile
+                - dockerfile: ./images/php/82/apache/Dockerfile
                   image: sugarcrmdevelopers/sugardockerized
                   prefix: php8.2-apache-
-                - dockerfile: ../../images/php/82/cron/Dockerfile
+                - dockerfile: ./images/php/82/cron/Dockerfile
                   image: sugarcrmdevelopers/sugardockerized
                   prefix: php8.2-cron-
         runs-on: ubuntu-latest
