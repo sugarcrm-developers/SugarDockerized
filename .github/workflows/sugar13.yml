@@ -60,6 +60,6 @@ jobs:
             with:
                 context: ${{ matrix.dockercontext }}
                 push: true
-                platforms: 'linux/amd64,linux/amd64/v2,linux/amd64/v3,linux/386'
+                platforms: 'linux/amd64,linux/arm64'
                 tags: ${{ steps.meta.outputs.tags }}
                 labels: ${{ steps.meta.outputs.labels }}
