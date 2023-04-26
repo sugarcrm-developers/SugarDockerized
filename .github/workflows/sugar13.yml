@@ -33,6 +33,15 @@ jobs:
                 - dockercontext: ./images/php/82/cron
                   image: sugarcrmdevelopers/sugardockerized
                   prefix: php8.2-cron-
+                - dockercontext: ./images/mysql/8032
+                  image: sugarcrmdevelopers/sugardockerized
+                  prefix: mysql8.0.32-
+                - dockercontext: ./images/permissions
+                  image: sugarcrmdevelopers/sugardockerized
+                  prefix: permissions-
+                - dockercontext: ./images/testsmtp
+                  image: sugarcrmdevelopers/sugardockerized
+                  prefix: testsmtp-
         runs-on: ubuntu-latest
         steps:
           - name: Checkout repository
@@ -52,8 +61,8 @@ jobs:
             with:
                 images: ${{ matrix.image }}
                 flavor: |
-                    latest=false
-                    prefix=${{ matrix.prefix }}
+                    latest=true
+                    prefix=${{ matrix.prefix }},onlatest=true
 
           - name: Build and push
             uses: docker/build-push-action@v4

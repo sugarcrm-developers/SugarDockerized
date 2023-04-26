@@ -83,9 +83,11 @@ services:
         image: sugar_permissions
         build: ../../images/permissions
         volumes:
-            - type: bind
-              source: ../../data/app
-              target: /var/www/html
+            - ../../data/app:/var/www/html
+    testsmtp:
+        container_name: "sugar-smtp"
+        image: sugar_testsmtp
+        build: ../../images/testsmtp
 
 volumes:
     es-data01:
