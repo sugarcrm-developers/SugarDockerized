@@ -52,7 +52,7 @@ jobs:
             with:
                 images: ${{ matrix.image }}
                 flavor: |
-                    latest=true
+                    latest=false
                     prefix=${{ matrix.prefix }}
 
           - name: Build and push

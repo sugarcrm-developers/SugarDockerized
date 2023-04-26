@@ -23,7 +23,7 @@ if ($response->getStatusCode() == 200) {
     $response = $client->put($url . 'testbucket');
     if ($response->getStatusCode() == 200) {
         $response = $client->put(
-            $url . 'testbucket/user/enrico?refresh=true',
+            $url . 'testbucket/_doc/enrico?refresh=true',
             array (
                 //'debug' => TRUE,
                 'json' => array(
@@ -33,7 +33,7 @@ if ($response->getStatusCode() == 200) {
         );
         if ($response->getStatusCode() == 201) {
             $response = $client->get(
-                $url . 'testbucket/user/_search',
+                $url . 'testbucket/_search',
                 array(
                     //'debug' => TRUE,
                     'query' => array(
