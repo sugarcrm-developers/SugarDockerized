@@ -13,6 +13,7 @@ services:
             - "APACHE_RUN_GROUP=sugar"
         volumes:
             - ../../data/app:/var/www/html
+            - ../../images/php/82/apache/config/php/docker.ini:/usr/local/etc/php/conf.d/docker.ini
         depends_on:
             - mysql
             - elasticsearch
@@ -29,6 +30,7 @@ services:
         image: sugarcrmdevelopers/sugardockerized:php8.2-cron-latest
         volumes:
             - ../../data/app:/var/www/html
+            - ../../images/php/82/apache/config/php/docker.ini:/usr/local/etc/php/conf.d/docker.ini
         depends_on:
             - mysql
             - elasticsearch
@@ -46,7 +48,7 @@ services:
         ports:
             - "3306:3306"
         volumes:
-            - ../../data/mysql/80:/var/lib/mysql
+            - ../../data/mysql/8032:/var/lib/mysql
         environment:
             - MYSQL_ROOT_PASSWORD=root
             - MYSQL_USER=sugar
@@ -64,6 +66,7 @@ services:
             - cluster.name=sugarcrm13
             - discovery.type=single-node
             - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+            - xpack.security.enabled=false
         ulimits:
             memlock:
                 soft: -1
