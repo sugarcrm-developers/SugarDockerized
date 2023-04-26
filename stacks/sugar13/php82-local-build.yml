@@ -59,7 +59,7 @@ services:
             - 9200:9200
             - 9300:9300
         volumes:
-            - ../../data/elasticsearch:/usr/share/elasticsearch/data
+            - es-data01:/usr/share/elasticsearch/data
         environment:
             - node.name=sugar1
             - cluster.name=sugarcrm13

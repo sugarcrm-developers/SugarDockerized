@@ -12,7 +12,7 @@ jobs:
         strategy:
             fail-fast: false
             matrix: 
-                run: ['stacks/sugar13/php82.yml', 'stacks/sugar13/php82-local-build.yml']
+                run: ['stacks/sugar13/php82-local-build.yml']
         steps:
             - run: sudo sysctl -w vm.max_map_count=262144
             - run: echo '127.0.0.1 docker.local' | sudo tee -a /etc/hosts
@@ -52,7 +52,7 @@ jobs:
             with:
                 images: ${{ matrix.image }}
                 flavor: |
-                    latest=false
+                    latest=true
                     prefix=${{ matrix.prefix }}
 
           - name: Build and push
