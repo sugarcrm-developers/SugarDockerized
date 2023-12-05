@@ -13,6 +13,8 @@ else
     if [ $running -gt 0 ]
     then
         # running
+        now="$(date)"
+        echo "Starting restore at $now"
 
         # enter the repo's root directory
         REPO="$( dirname ${BASH_SOURCE[0]} )/../"
@@ -112,6 +114,8 @@ else
             ./utilities/runcli.sh "./bin/sugarcrm search:silent_reindex --clearData"
             echo Restore completed!
         fi
+        now="$(date)"
+        echo "Restore finished at $now"
     else
         echo The stack is not running, please start the stack first
     fi
