@@ -46,7 +46,7 @@ There are multiple stack components as docker containers, that perform different
 
 ## SugarDockerized installation
 * The first step for everything to work smoothly, is to add on your computer's host file `/etc/hosts` the entry `docker.local` to point to your machine's ip (it might be `127.0.0.1` if running the stack locally, or the LAN static ip address of the VM running Docker. If using the Debian VirtualBox image provided at the bottom of this README, the ip address is `10.10.10.10`)
-* Clone the repository with `git clone https://github.com/esimonetti/SugarDockerized.git sugardocker` and enter sugardocker with `cd sugardocker`
+* Clone the repository with `git clone https://github.com/sugarcrm-developers/SugarDockerized.git sugardocker` and enter sugardocker with `cd sugardocker`
 * Choose the yml stack to run, within [stacks](stacks/)
 
 ## Starting and stopping the desired stack
