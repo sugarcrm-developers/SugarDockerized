@@ -2,6 +2,11 @@
 
 # Enrico Simonetti
 # enricosimonetti.com
+if [ ! -x "$(command -v unzip)" ]
+then
+    echo "The command unzip is not available, please install it"
+    exit 1
+fi
 
 if [ -z $1 ]
 then
