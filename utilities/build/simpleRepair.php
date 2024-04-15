@@ -17,7 +17,7 @@ $GLOBALS['current_user'] = $u->getSystemUser();
 
 echo("Running QRR...\n");
 $repair = new \RepairAndClear();
-$repair->repairAndClearAll(['clearAll'], [$mod_strings['LBL_ALL_MODULES']], true, false, '');
+$repair->repairAndClearAll(['clearAll'], [$mod_strings['LBL_ALL_MODULES']], false, false, '');
 
 echo("Rebuilding cache...\n");
 \SugarAutoLoader::buildCache();
