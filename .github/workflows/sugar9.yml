@@ -2,8 +2,9 @@ name:
 on:
     #push:
     #    branches: [ master, dev ]
-    pull_request:
-        branches: [ master ]
+    push:
+        tags:
+            - 'v*'
 jobs:
     tests:
         runs-on: ubuntu-latest
