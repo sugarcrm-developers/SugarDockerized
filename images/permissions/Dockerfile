@@ -1,4 +1,4 @@
-FROM debian:8.8
+FROM debian:stable-slim
 MAINTAINER enrico.simonetti@gmail.com
 
 RUN adduser sugar --disabled-password --disabled-login --gecos ""
