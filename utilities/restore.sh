@@ -59,7 +59,8 @@ else
 
             if [ -f $BACKUP_DIR/sugar.sql ]
             then
-                cat $BACKUP_DIR/sugar.sql | docker exec -i sugar-mysql mysql -h localhost -u root -proot sugar
+                # cat $BACKUP_DIR/sugar.sql | docker exec -i sugar-mysql mysql -h localhost -u root -proot sugar
+                pv $BACKUP_DIR/sugar.sql | docker exec -i sugar-mysql mysql -h localhost -u root -proot sugar --init-command="SET SESSION FOREIGN_KEY_CHECKS=0; SET SESSION UNIQUE_CHECKS=0;"
                 echo Database restored
             else
                 echo Database not found! The selected restore is corrupted
