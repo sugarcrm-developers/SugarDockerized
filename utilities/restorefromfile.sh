@@ -93,6 +93,9 @@ else
                 exit 1
             fi
             echo "Dockerizing Backup config files..."
+            if [ ! -f ./data/app/sugar/.htaccess ]; then
+                cp ./utilities/configs/.htaccess ./data/app/sugar/.htaccess
+            fi
             sed -i.bak 's@RewriteBase /@RewriteBase /sugar@g' ./data/app/sugar/.htaccess
             cat ./utilities/configs/config_override_dockerized.php >> ./data/app/sugar/config_override.php
             
