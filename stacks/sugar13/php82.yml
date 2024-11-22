@@ -13,7 +13,6 @@ services:
             - "APACHE_RUN_GROUP=sugar"
         volumes:
             - ../../data/app:/var/www/html
-            - ../../images/php/82/apache/config/php/docker.ini:/usr/local/etc/php/conf.d/docker.ini
         depends_on:
             - mysql
             - elasticsearch
@@ -30,7 +29,6 @@ services:
         image: sugarcrmdevelopers/sugardockerized:php8.2-cron-latest
         volumes:
             - ../../data/app:/var/www/html
-            - ../../images/php/82/apache/config/php/docker.ini:/usr/local/etc/php/conf.d/docker.ini
         depends_on:
             - mysql
             - elasticsearch

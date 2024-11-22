@@ -45,6 +45,7 @@ RUN docker-php-ext-install -j$(nproc) gd
 
 # disable by default, it can be enabled locally
 #COPY config/php/mods-available/xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
+COPY config/php/docker.ini /usr/local/etc/php/conf.d/docker.ini
 COPY config/php/mods-available/opcache.ini /usr/local/etc/php/conf.d/opcache.ini
 COPY config/php/opcache-blacklist /usr/local/etc/php/opcache-blacklist
 
@@ -65,6 +66,18 @@ RUN git clone https://github.com/longxinH/xhprof.git xhprof \
     && make install
 
 COPY config/php/mods-available/xhprof.ini /usr/local/etc/php/conf.d/xhprof.ini
+
+# Important to enable providers
+RUN sed -i 's/^# providers = provider_sect/providers = provider_sect/' /etc/ssl/openssl.cnf 
+
+# Append the custom OpenSSL configuration to the existing openssl.cnf
+RUN echo '[provider_sect]' >> /etc/ssl/openssl.cnf && \
+    echo 'default = default_sect' >> /etc/ssl/openssl.cnf && \
+    echo 'legacy = legacy_sect' >> /etc/ssl/openssl.cnf && \
+    echo '[default_sect]' >> /etc/ssl/openssl.cnf && \
+    echo 'activate = 1' >> /etc/ssl/openssl.cnf && \
+    echo '[legacy_sect]' >> /etc/ssl/openssl.cnf && \
+    echo 'activate = 1' >> /etc/ssl/openssl.cnf
 
 RUN curl -sS http://getcomposer.org/installer | php \
     && mv composer.phar /usr/local/bin/composer

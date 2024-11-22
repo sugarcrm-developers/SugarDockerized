@@ -47,6 +47,7 @@ RUN docker-php-ext-install -j$(nproc) gd
 
 # disable by default, it can be enabled locally
 #COPY config/php/mods-available/xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
+COPY config/php/docker.ini /usr/local/etc/php/conf.d/docker.ini
 COPY config/php/mods-available/opcache.ini /usr/local/etc/php/conf.d/opcache.ini
 COPY config/php/opcache-blacklist /usr/local/etc/php/opcache-blacklist
 
