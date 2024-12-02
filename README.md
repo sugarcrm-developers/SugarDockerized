@@ -11,7 +11,6 @@ If you find this software useful, please consider supporting the work that went 
 ## Requirements
 * linux platform - it can be a virtual machine
 * docker
-* docker-compose
 * curl
 * rsync
 * zip
