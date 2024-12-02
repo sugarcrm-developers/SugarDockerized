@@ -4,10 +4,6 @@ then
     echo PHP version not provided
 else
     echo Installing composer dependencies if any
-    # add web_tests to sugar-cron after it becomes available through 'pwd'
-    ./utilities/runcli.sh "pwd"
-    docker cp ./tests/web_tests sugar-cron:/var/www/html/sugar
-
     ./utilities/runcli.sh "cd ./web_tests/$3/ && composer install"
 
     echo Confirming that Apache, MySQL and Elasticsearch are available
@@ -28,10 +24,6 @@ else
             exit 1
         fi
     done
-
-    # add web_tests to sugar-web1
-    docker cp ./tests/web_tests sugar-web1:/var/www/html/sugar/
-    docker exec sugar-web1 chown sugar:sugar -R /var/www/html/sugar/web_tests
 
     while [ `./utilities/runcli.sh "(echo >/dev/tcp/sugar-mysql/3306) &>/dev/null && echo 1 || echo 0"` != "1" ] ; do
         echo MySQL is not ready... sleeping...
@@ -77,18 +69,18 @@ else
             echo Script ./web_tests/$3/test_$i.php executed successfully via CLI
         fi
 
-        OUTPUT_WEB=`./utilities/runcli.sh "curl -s http://sugar-web1/sugar/web_tests/$3/test_$i.php | grep ok | wc -l"`
+        OUTPUT_WEB=`curl -s http://docker.local/sugar/web_tests/$3/test_$i.php | grep ok | wc -l`
         if [ $OUTPUT_WEB != '1' ]
         then
             echo Error for web script test_$i.php
             echo Output:
-            echo `curl -s http://sugar-web1/sugar/web_tests/$3/test_$i.php`
+            echo `curl -s http://docker.local/sugar/web_tests/$3/test_$i.php`
             echo 
             echo Retrieving complete logs from the web server:
             docker logs sugar-web1
             exit 1
         else
-            echo Script http://sugar-web1/sugar/web_tests/$3/test_$i.php executed successfully via web
+            echo Script http://docker.local/sugar/web_tests/$3/test_$i.php executed successfully via web
         fi
     done
 fi

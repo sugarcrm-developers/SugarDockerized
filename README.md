@@ -1,4 +1,4 @@
-# Sugar Dockerized  [![Build Status](https://github.com/sugarcrm-developers/SugarDockerized/actions/workflows/sugar12.yml/badge.svg)](https://github.com/sugarcrm-developers/SugarDockerized/actions/workflows/sugar12.yml) [![Build Status](https://github.com/sugarcrm-developers/SugarDockerized/actions/workflows/sugar13.yml/badge.svg)](https://github.com/sugarcrm-developers/SugarDockerized/actions/workflows/sugar13.yml)
+# Sugar Dockerized  [![Build Status](https://github.com/sugarcrm-developers/SugarDockerized/actions/workflows/sugar12.yml/badge.svg)](https://github.com/sugarcrm-developers/SugarDockerized/actions/workflows/sugar12.yml) [![Build Status](https://github.com/sugarcrm-developers/SugarDockerized/actions/workflows/sugar13.yml/badge.svg)](https://github.com/sugarcrm-developers/SugarDockerized/actions/workflows/sugar13.yml) [![Build Status](https://github.com/sugarcrm-developers/SugarDockerized/actions/workflows/sugar14.yml/badge.svg)](https://github.com/sugarcrm-developers/SugarDockerized/actions/workflows/sugar14.yml)
 
 This repository will help you deploy a Docker based **development only** full stack for Sugar, meeting all the platform requirements for a different set of platform combinations.
 
@@ -21,12 +21,13 @@ If you find this software useful, please consider supporting the work that went 
 
 ## Stacks available
 There are few stacks available, with in itself multiple platform combinations. You can read more about the specific stacks on the links below:
-* [Sugar 13](stacks/sugar13/README.md) - This stack is valid from version 13 for local developement also of Sugar Cloud only versions
-* [Sugar 12](stacks/sugar12/README.md) - This stack is valid from version 12 for local developement also of Sugar Cloud only versions
-* [Sugar 11](stacks/sugar11/README.md) - This stack is valid from version 11 for local developement also of Sugar Cloud only versions
+* [Sugar 14](stacks/sugar14/README.md) - This stack is valid for version 13 for local developement also of Sugar Cloud only versions
+* [Sugar 13](stacks/sugar13/README.md) - This stack is valid for version 13 for local developement also of Sugar Cloud only versions
+* [Sugar 12](stacks/sugar12/README.md) - This stack is valid for version 12 for local developement also of Sugar Cloud only versions
+* [Sugar 11](stacks/sugar11/README.md) - This stack is valid for version 11 for local developement also of Sugar Cloud only versions
 
 You will find additional stacks within the [stack directory of the project](stacks).
-For most stacks, there are both the pre-built version (eg on Sugar 13: `./stacks/sugar13/php82.yml`) and a locally built version (eg on Sugar 13: `./stacks/sugar13/php82-local-build.yml`). The locally built version will be built run-time, and therefore those stacks will let you specify additional changes you might require to the docker images provided. Local builds will take much longer to deploy than pre-built ones.
+For most stacks, there are both the pre-built version (eg on Sugar 14: `./stacks/sugar14/php83.yml`) and a locally built version (eg on Sugar 14: `./stacks/sugar14/php83-local-build.yml`). The locally built version will be built run-time, and therefore those stacks will let you specify additional changes you might require to the docker images provided. Local builds will take much longer to deploy than pre-built ones.
 
 ### Types of stacks
 There are mainly three types of stack:
@@ -66,7 +67,7 @@ For details about the hostnames and credentials of each of the infrastructure co
 * Run the utility `build/build.sh`. Read more about [build/build.sh](#buildbuildsh)
 
 ## Current version support
-The main stacks work with [Sugar version 13.0 and all its platform requirements](https://support.sugarcrm.com/Resources/Supported_Platforms/Sugar_13.0.x_Supported_Platforms/). Additional stacks are aligned with the platform requirements of version [12.x](https://support.sugarcrm.com/Resources/Supported_Platforms/Sugar_12.0.x_Supported_Platforms/), [11.x](https://support.sugarcrm.com/Resources/Supported_Platforms/Sugar_11.0.x_Supported_Platforms/) and stacks for Sugar Cloud only versions for local development only.
+The main stacks work with [Sugar version 14.0 and all its platform requirements](https://support.sugarcrm.com/Resources/Supported_Platforms/Sugar_14.0.x_Supported_Platforms/). Additional stacks are aligned with the platform requirements of version [13.x](https://support.sugarcrm.com/Resources/Supported_Platforms/Sugar_13.0.x_Supported_Platforms/), [12.x](https://support.sugarcrm.com/Resources/Supported_Platforms/Sugar_12.0.x_Supported_Platforms/) and stacks for Sugar Cloud only versions for local development only.
 
 ## System's details
 
@@ -481,7 +482,7 @@ To run the repair from the docker host, assuming that the repository has been ch
 cd sugardocker
 ./utilities/repair.sh
 ```
-The actual code for `repair.sh` leverages the [`toothpaste.sh`](#toothpastesh) script mentioned above.
+This script will use [simpleRepair.php](utilities/build/simpleRepair.php) created to QRR (repair and rebuild) local instances. The script itself will clear cache and warmup services in the local instance.
 
 ### Setup Sugar instance to leverage Redis object caching
 Add on `config_override.php` the following options:
