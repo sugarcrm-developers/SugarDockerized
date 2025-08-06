@@ -121,9 +121,9 @@ Apache web servers have PHP with enabled:
 
       <img width="1026" alt="PHPStorm xdebug settings" src="https://user-images.githubusercontent.com/361254/38972661-d48661f6-4356-11e8-9245-ad598239fe94.png">
 
-        * Debug with Xdebug Helper
+        * Debug with Xdebug Helper by JetBrains
 
-          If you use Chrome as a browser, you can install the extension [Xdebug helper](https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc). When ready to debug, click the debug button on the Xdebug helper, and click on "Start listening for PHP Debug Connections" within PHPStorm
+          If you use Chrome as a browser, you can install the extension [Xdebug Helper by JetBrains](https://chromewebstore.google.com/detail/xdebug-helper-by-jetbrain/aoelhdemabeimdhedkidlnbkfhnhgnhm). When ready to debug, click the debug button on the Xdebug helper, and click on "Start listening for PHP Debug Connections" within PHPStorm
 
           <img width="146" alt="xdebughelper" src="https://user-images.githubusercontent.com/361254/43093912-5a7a3bf2-8e66-11e8-9c11-811316d8f2ee.png">
           <img  width="50" alt="Start listening for PHP Debug Connections" src="https://user-images.githubusercontent.com/361254/43093985-8d4aa724-8e66-11e8-946c-5ccc83b62560.png">
