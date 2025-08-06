@@ -125,7 +125,7 @@ Apache web servers have PHP with enabled:
 
           If you use Chrome as a browser, you can install the extension [Xdebug Helper by JetBrains](https://chromewebstore.google.com/detail/xdebug-helper-by-jetbrain/aoelhdemabeimdhedkidlnbkfhnhgnhm). When ready to debug, click the debug button on the Xdebug helper, and click on "Start listening for PHP Debug Connections" within PHPStorm
 
-          <img width="146" alt="xdebughelper" src="https://user-images.githubusercontent.com/361254/43093912-5a7a3bf2-8e66-11e8-9c11-811316d8f2ee.png">
+          <img width="146" alt="xdebughelper" src="https://github.com/user-attachments/assets/d3015be0-33e0-42e5-ad05-053b39925bc7">
           <img  width="50" alt="Start listening for PHP Debug Connections" src="https://user-images.githubusercontent.com/361254/43093985-8d4aa724-8e66-11e8-946c-5ccc83b62560.png">
 
         * Debug with Postman
