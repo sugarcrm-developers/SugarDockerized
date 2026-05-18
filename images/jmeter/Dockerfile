@@ -1,4 +1,4 @@
-FROM debian:9.6
+FROM debian:stable-slim
 LABEL maintainer="enrico.simonetti@gmail.com"
 
 RUN apt-get update \
