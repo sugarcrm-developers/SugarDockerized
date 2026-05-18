@@ -59,8 +59,8 @@ else
 
             if [ -d $TEMP_FOLDER/sql ]
             then
-                find $TEMP_FOLDER/sql -type f -name 'sugar*' ! -name '*triggers*' -exec sh -c 'sql=${1:-:}; x="${2:-:}"; mv "$x" "$sql/sugar.sql"' bash "$TEMP_FOLDER/sql" {} +\;
-                find $TEMP_FOLDER/sql -type f -name '*triggers*' -exec sh -c 'sql=${1:-:}; x="{}"; mv "${2:-:}" "$sql/sugar_triggers.sql"' bash "$TEMP_FOLDER/sql" {} +\;
+                find $TEMP_FOLDER/sql -type f -name 'sugar*' ! -name '*triggers*' -exec sh -c 'sql=${1:-:}; x="${2:-:}"; mv "$x" "$sql/sugar.sql"' bash "$TEMP_FOLDER/sql" {} \;
+                find $TEMP_FOLDER/sql -type f -name '*triggers*' -exec sh -c 'sql=${1:-:}; x="{}"; mv "${2:-:}" "$sql/sugar_triggers.sql"' bash "$TEMP_FOLDER/sql" {} \;
             fi
 
             echo Restoring application files
