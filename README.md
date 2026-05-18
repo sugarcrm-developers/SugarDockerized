@@ -1,4 +1,4 @@
-# Sugar Dockerized [![Build Status](https://github.com/sugarcrm-developers/SugarDockerized/actions/workflows/sugar26.yml/badge.svg)](https://github.com/sugarcrm-developers/SugarDockerized/actions/workflows/sugar26.yml) [![Build Status](https://github.com/sugarcrm-developers/SugarDockerized/actions/workflows/sugar25.yml/badge.svg)](https://github.com/sugarcrm-developers/SugarDockerized/actions/workflows/sugar25.yml)
+# Sugar Dockerized [![Build Status](https://github.com/sugarcrm-developers/SugarDockerized/actions/workflows/sugar26.yml/badge.svg)](https://github.com/sugarcrm-developers/SugarDockerized/actions/workflows/sugar26.yml) 
 
 This repository will help you deploy a Docker based **development only** full stack for Sugar, meeting all the platform requirements for a different set of platform combinations.
 
