@@ -1,4 +1,4 @@
-# Sugar Dockerized [![Build Status](https://github.com/sugarcrm-developers/SugarDockerized/actions/workflows/sugar25.yml/badge.svg)](https://github.com/sugarcrm-developers/SugarDockerized/actions/workflows/sugar25.yml)  [![Build Status](https://github.com/sugarcrm-developers/SugarDockerized/actions/workflows/sugar14.yml/badge.svg)](https://github.com/sugarcrm-developers/SugarDockerized/actions/workflows/sugar14.yml) [![Build Status](https://github.com/sugarcrm-developers/SugarDockerized/actions/workflows/sugar13.yml/badge.svg)](https://github.com/sugarcrm-developers/SugarDockerized/actions/workflows/sugar13.yml) [![Build Status](https://github.com/sugarcrm-developers/SugarDockerized/actions/workflows/sugar12.yml/badge.svg)](https://github.com/sugarcrm-developers/SugarDockerized/actions/workflows/sugar12.yml)
+# Sugar Dockerized [![Build Status](https://github.com/sugarcrm-developers/SugarDockerized/actions/workflows/sugar26.yml/badge.svg)](https://github.com/sugarcrm-developers/SugarDockerized/actions/workflows/sugar26.yml) [![Build Status](https://github.com/sugarcrm-developers/SugarDockerized/actions/workflows/sugar25.yml/badge.svg)](https://github.com/sugarcrm-developers/SugarDockerized/actions/workflows/sugar25.yml)
 
 This repository will help you deploy a Docker based **development only** full stack for Sugar, meeting all the platform requirements for a different set of platform combinations.
 
@@ -20,7 +20,11 @@ If you find this software useful, please consider supporting the work that went 
 
 ## Stacks available
 There are few stacks available, with in itself multiple platform combinations. You can read more about the specific stacks on the links below:
+* [Sugar 26](stacks/sugar26/README.md) - This stack is compatible with version 26 for local development
 * [Sugar 25](stacks/sugar25/README.md) - This stack is compatible with version 25 for local development
+
+### Legacy stacks (no longer built by CI)
+The stacks below are kept in the repository for reference and can still be used locally, but new images are no longer published on every tag. The pre-built images for these versions remain available on [Docker Hub](https://hub.docker.com/r/sugarcrmdevelopers/sugardockerized/tags).
 * [Sugar 14](stacks/sugar14/README.md) - This stack is compatible with version 14 for local development
 * [Sugar 13](stacks/sugar13/README.md) - This stack is compatible with version 13 for local development
 * [Sugar 12](stacks/sugar12/README.md) - This stack is compatible with version 12 for local development
